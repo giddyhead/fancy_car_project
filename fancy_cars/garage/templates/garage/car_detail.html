@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Detail {{object.make}} and Model {{ object.model }} </title>
+</head>
+<body>
+    
+<h1>{{ object.make }}</h1>
+<h1>{{ object.model }}</h1>
+<h1>{{ object.color }}</h1>
+<h1>{{ object.horsepower }}</h1>
+<img src="{{object.image.url}}" width="600px"/>
+<h2><a href="{% url 'car-update' pk=object.pk %}">Update this Car</a></h2>
+<h2><a href="{% url 'car-delete' pk=object.pk  %}">Delete this Car</a></h2>
+</body>
+</html>

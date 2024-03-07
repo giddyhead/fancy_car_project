@@ -1,0 +1,17 @@
+<html>
+
+<h1>Fancy Cars in my Garage</h1>
+    <h2>Browse by make</h2>
+    {% for car in menu_make %}
+        <a href="{% url 'car_make' make=car.make %}"><button>{{car.make}}</button></a>
+    {% endfor %}
+    <h2>Browse by color</h2>
+    {% for car in menu_color %}
+        <a href="{% url 'car_color' color=car.color %}"><button>{{car.color}}</button></a>
+    {% endfor %}
+    <h2>List of all cars</h2>
+    {% for car in object_list %}
+        <li><a href="{{ car.get_absolute_url }}">{{car.make}}, {{car.model}}, {{car.color}}</a></li>
+    {% endfor %}
+
+</html>

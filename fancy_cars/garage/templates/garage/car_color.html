@@ -1,0 +1,9 @@
+<h1>{{ color }} Cars in my Garage</h1>
+
+{% if sorted_by_color %}
+ {% for car in sorted_by_color %}
+  <li><a href="{{ car.get_absolute_url }}">{{car.make}}, {{car.model}}, {{car.color}}</a></li>
+  {% endfor %}
+{% else %}
+    <h1>We could not find any info on {{ color }}</h1>
+{% endif %}
